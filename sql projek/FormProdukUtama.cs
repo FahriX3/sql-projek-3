@@ -156,5 +156,10 @@ namespace sql_projek
                 }
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDataProduk();
+        }
     }
 }

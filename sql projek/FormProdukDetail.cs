@@ -24,7 +24,7 @@ namespace sql_projek
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT NamaProduk, Harga, Stok, KategoriId
+                    string query = @"SELECT NamaProduk, Harga, Stok, KategoriId, Deskripsi
                     FROM Produk WHERE Id = @id";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@id", ProdukId);
@@ -34,6 +34,7 @@ namespace sql_projek
                         txtNamaProduk.Text = reader["NamaProduk"].ToString();
                         txtHarga.Text = reader["Harga"].ToString();
                         txtStok.Text = reader["Stok"].ToString();
+                        txtDeskripsi.Text = reader["Deskripsi"].ToString();
                         cmbKategori.SelectedValue =
                         Convert.ToInt32(reader["KategoriId"]);
                     }
